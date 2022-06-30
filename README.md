@@ -55,7 +55,7 @@ storage variable.
         }
     }
     ```
-1. Event parameters are named without lower handwriting. The name of the event must refer to an event that has already
+1. Event parameters are named without lower handwriting. The name of the event must refer to an action that has already
 happened.
     ```
     event Deposited(address to, uint256 value);
