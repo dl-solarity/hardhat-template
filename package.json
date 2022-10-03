@@ -25,7 +25,7 @@
   "dependencies": {
     "@openzeppelin/contracts": "4.5.0",
     "@openzeppelin/contracts-upgradeable": "4.5.0",
-    "@dlsl/dev-modules": "^1.6.0",
+    "@dlsl/dev-modules": "^1.7.0",
     "dotenv": "^10.0.0",
     "hardhat": "^2.11.0"
   },
