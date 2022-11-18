@@ -49,7 +49,7 @@ module.exports = {
       accounts: privateKey(),
       gasMultiplier: 1.2,
     },
-    eth: {
+    ethereum: {
       url: `https://mainnet.infura.io/v3/${process.env.INFURA_KEY}`,
       accounts: privateKey(),
       gasMultiplier: 1.2,
