@@ -7,7 +7,7 @@
         function _calcI() internal {}
         function _calcP() private {}
     }
-    
+
     ```
 
 1. `internal` functions in "internal libs" (without `external` functions) are named **without** an underscore before the name.
