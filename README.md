@@ -1,83 +1,55 @@
-## **Code Style Agreements**
+# Hardhat template 
 
-1. `internal` or `private` functions are named **with** an underscore before the name.
+Template hardhat repository for ad-hoc smart contracts development.
 
-    ```solidity
-    contract ContractExample {
-        function _calcI() internal {}
-        function _calcP() private {}
-    }
-    
-    ```
+### How to use
 
-1. `internal` functions in "internal libs" (without `external` functions) are named **without** an underscore before the name.
+The template works out of the box. To clean up the repo, you may need to delete the mock contracts, tests and migration files.
 
-    ```solidity
-    library LibExample {
-        function calcI() internal {}
-        function _calcP() private {}
-    }
-    ```
+#### Test
 
-1. `internal` or `private` `storage` variables are named **with** an underscore before the name.
+To run the tests, execute the following command:
 
-    ```solidity
-    uint256 internal _varA;
-    uint256 private _varB;
-    ```
+```bash
+npm run test
+```
 
-1. Local variables (`memory`, `calldata`, etc.), including function arguments, are named **with** an underscore at the end of the name.
+Or to see the coverage, run:
 
-    ```solidity
-    function _calc1(uint256 a_) private pure returns (uint256 c_) {
-        uint256 d_ = 5;
-        c_ = a_ + d_;
-    }
+```bash
+npm run coverage
+```
 
-    function _calc2(uint256[] memory arr1_, uint256[] calldata arr2_) private pure returns (uint256 c_) {
-        c_ = arr1_[0] + arr2_[0];
-    }
-    ```
+#### Local deployment
 
-1. If you want to declare a local `storage` variable, the name of such a variable will have the **same** format as the
-referenced `storage` variable.
+To deploy the contracts locally, run the following commands (in the different terminals):
 
-    ```solidity
-    contract ContractExample {
-        struct Pair {
-            uint256 numA;
-            uint256 numB;
-        }
+```bash
+npm run private-network
+npm run deploy-local
+```
 
-        Pair[] public pairs;
-        Pair[] internal _pairs;
-    
-        function someNameA() external view returns (uint256) {
-            Pair storage pair = pairs[0];
-    
-            return pair.numA;
-        }
-    
-        function someNameB() external view returns (uint256) {
-            Pair storage _pair = _pairs[0];
-    
-            return _pair.numB;
-        }
-    }
-    ```
+#### Bindings
 
-1. `event` parameters are named **without** lower handwriting. The name of the event must refer to an action that has already happened.
+The command to generate the bindings is as follows:
 
-    ```solidity
-    event Deposited(address to, uint256 value);
-    ```
+```bash
+npm run generate-types
+```
 
-1. `const` and `immutable` are named **with** SCREAMING_SNAKE_CASE.
+> See the full list of available commands in the `package.json` file.
 
-1. Comments in the `contract` can omitted.
+### Integrated plugins
 
-1. Write full function comments in NatSpec format in the contract `interface` via multi-line comments.
+- Hardhat official `web3` + `truffle5`
+- [`Typechain`](https://www.npmjs.com/package/@typechain/hardhat)
+- [`hardhat-migrate`](https://www.npmjs.com/package/@dlsl/hardhat-migrate), [`hardhat-gobind`](https://www.npmjs.com/package/@dlsl/hardhat-gobind)
+- [`hardhat-contract-sizer`](https://www.npmjs.com/package/hardhat-contract-sizer)
+- [`hardhat-gas-reporter`](https://www.npmjs.com/package/hardhat-gas-reporter)
+- [`solidity-coverage`](https://www.npmjs.com/package/solidity-coverage)
 
-1. The declaration of `events` and `structs` should be in the contract interface.
+### Other niceties
 
-1. If there is no `interface`, everything is written in the `contract`.
+- The template comes with presetup `prettier` and `solhint` that lint the project via `husky` before compilation hook.
+- The `.env.example` file is provided to check what is required as ENVs
+- Preinstalled `@openzeppelin/contracts` and `@dlsl/dev-modules`
