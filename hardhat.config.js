@@ -3,6 +3,7 @@ require("@nomiclabs/hardhat-truffle5");
 require("@typechain/hardhat");
 require("@dlsl/hardhat-migrate");
 require("@dlsl/hardhat-gobind");
+require("@dlsl/hardhat-markup");
 require("hardhat-contract-sizer");
 require("hardhat-gas-reporter");
 require("solidity-coverage");
