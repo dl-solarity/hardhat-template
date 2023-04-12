@@ -40,11 +40,21 @@ module.exports = {
       accounts: privateKey(),
       gasMultiplier: 1.2,
     },
+    sepolia: {
+      url: `https://sepolia.infura.io/v3/${process.env.INFURA_KEY}`,
+      accounts: privateKey(),
+      gasMultiplier: 1.2,
+    },
     chapel: {
       url: "https://data-seed-prebsc-1-s1.binance.org:8545",
       accounts: privateKey(),
       gasMultiplier: 1.2,
       timeout: 60000,
+    },
+    mumbai: {
+      url: `https://rpc-mumbai.maticvigil.com/`,
+      accounts: privateKey(),
+      gasMultiplier: 1.2,
     },
     bsc: {
       url: "https://bsc-dataseed.binance.org/",
@@ -53,6 +63,11 @@ module.exports = {
     },
     ethereum: {
       url: `https://mainnet.infura.io/v3/${process.env.INFURA_KEY}`,
+      accounts: privateKey(),
+      gasMultiplier: 1.2,
+    },
+    polygon: {
+      url: `https://matic-mainnet.chainstacklabs.com`,
       accounts: privateKey(),
       gasMultiplier: 1.2,
     },
@@ -68,10 +83,13 @@ module.exports = {
   },
   etherscan: {
     apiKey: {
-      mainnet: `${process.env.ETHERSCAN_KEY}`,
       goerli: `${process.env.ETHERSCAN_KEY}`,
-      bsc: `${process.env.BSCSCAN_KEY}`,
+      sepolia: `${process.env.ETHERSCAN_KEY}`,
+      mainnet: `${process.env.ETHERSCAN_KEY}`,
       bscTestnet: `${process.env.BSCSCAN_KEY}`,
+      bsc: `${process.env.BSCSCAN_KEY}`,
+      polygonMumbai: `${process.env.POLYGONSCAN_KEY}`,
+      polygon: `${process.env.POLYGONSCAN_KEY}`,
     },
   },
   migrate: {
