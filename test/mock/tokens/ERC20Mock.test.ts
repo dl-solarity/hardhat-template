@@ -1,9 +1,9 @@
 import { expect } from "chai";
 import { SignerWithAddress } from "@nomiclabs/hardhat-ethers/signers";
-import { ERC20Mock } from "../../../generated-types/ethers";
 import { ethers } from "hardhat";
 import { Reverter } from "../../helpers/reverter";
-import { wei } from "../../../scripts/utils/utils";
+import { wei } from "@/scripts/utils/utils";
+import { ERC20Mock } from "@/generated-types/ethers";
 
 describe("ERC20Mock", () => {
   let OWNER: SignerWithAddress;

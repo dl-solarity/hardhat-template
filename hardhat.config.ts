@@ -9,6 +9,7 @@ import "@dlsl/hardhat-markup";
 import "hardhat-contract-sizer";
 import "hardhat-gas-reporter";
 import "solidity-coverage";
+import "tsconfig-paths/register";
 
 import { HardhatUserConfig } from "hardhat/config";
 
