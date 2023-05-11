@@ -1,7 +1,7 @@
 import { expect } from "chai";
 import { SignerWithAddress } from "@nomiclabs/hardhat-ethers/signers";
 import { ethers } from "hardhat";
-import { Reverter } from "../../helpers/reverter";
+import { Reverter } from "@/test/helpers/reverter";
 import { wei } from "@/scripts/utils/utils";
 import { ERC20Mock } from "@/generated-types/ethers";
 
