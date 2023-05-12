@@ -19,15 +19,3 @@ jobs:
         uses: ./.github/actions/setup
       - name: Run tests
         run: npm run test
-
-  coverage:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout the repository
-        uses: actions/checkout@v3
-      - name: Setup
-        uses: ./.github/actions/setup
-      - name: Run coverage
-        run: npm run coverage
-      - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v3
