@@ -6,12 +6,12 @@ import { wei } from "@/scripts/utils/utils";
 import { ERC20Mock } from "@ethers-v5";
 
 describe("ERC20Mock", () => {
+  const reverter = new Reverter();
+
   let OWNER: SignerWithAddress;
   let SECOND: SignerWithAddress;
 
   let erc20: ERC20Mock;
-
-  let reverter = new Reverter();
 
   before(async () => {
     [OWNER, SECOND] = await ethers.getSigners();
