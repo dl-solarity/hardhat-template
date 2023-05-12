@@ -41,7 +41,7 @@ npm run generate-types
 
 ### Integrated plugins
 
-- Hardhat official `web3` + `truffle5`
+- Hardhat official `ethers` + `ethers-v5`
 - [`Typechain`](https://www.npmjs.com/package/@typechain/hardhat)
 - [`hardhat-migrate`](https://www.npmjs.com/package/@dlsl/hardhat-migrate), [`hardhat-gobind`](https://www.npmjs.com/package/@dlsl/hardhat-gobind)
 - [`hardhat-contract-sizer`](https://www.npmjs.com/package/hardhat-contract-sizer)
