@@ -18,7 +18,7 @@
     "deploy-sepolia": "npx hardhat migrate --network sepolia --verify --confirmations 5",
     "deploy-chapel": "npx hardhat migrate --network chapel --verify --confirmations 1",
     "deploy-mumbai": "npx hardhat migrate --network mumbai --verify --confirmations 10",
-    "deploy-fuji": "npx hardhat migrate --network avalanche_fuji_testnet --verify --confirmations 5",
+    "deploy-fuji": "npx hardhat migrate --network fuji --verify --confirmations 5",
     "deploy-ethereum": "npx hardhat migrate --network ethereum --verify --confirmations 4",
     "deploy-bsc": "npx hardhat migrate --network bsc --verify --confirmations 2",
     "deploy-polygon": "npx hardhat migrate --network polygon --verify --confirmations 10",
