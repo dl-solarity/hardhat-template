@@ -136,6 +136,9 @@ const config: HardhatUserConfig = {
     discriminateTypes: true,
     dontOverrideCompile: !forceTypechain(),
   },
+  paths: {
+    tests: "./tests",
+  },
 };
 
 export default config;
