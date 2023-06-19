@@ -1,4 +1,4 @@
-export = {
+module.exports = {
   skipFiles: [],
   configureYulOptimizer: true,
 };
