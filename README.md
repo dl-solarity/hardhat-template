@@ -43,7 +43,7 @@ npm run generate-types
 
 - Hardhat official `ethers` + `ethers-v5`
 - [`Typechain`](https://www.npmjs.com/package/@typechain/hardhat)
-- [`hardhat-migrate`](https://www.npmjs.com/package/@dlsl/hardhat-migrate), [`hardhat-gobind`](https://www.npmjs.com/package/@dlsl/hardhat-gobind)
+- [`hardhat-migrate`](https://www.npmjs.com/package/@solarity/hardhat-migrate), [`hardhat-gobind`](https://www.npmjs.com/package/@solarity/hardhat-gobind)
 - [`hardhat-contract-sizer`](https://www.npmjs.com/package/hardhat-contract-sizer)
 - [`hardhat-gas-reporter`](https://www.npmjs.com/package/hardhat-gas-reporter)
 - [`solidity-coverage`](https://www.npmjs.com/package/solidity-coverage)
@@ -52,4 +52,4 @@ npm run generate-types
 
 - The template comes with presetup `prettier` and `solhint` that lint the project via `husky` before compilation hook.
 - The `.env.example` file is provided to check what is required as ENVs
-- Preinstalled `@openzeppelin/contracts` and `@dlsl/dev-modules`
+- Preinstalled `@openzeppelin/contracts` and `@solarity/solidity-lib`

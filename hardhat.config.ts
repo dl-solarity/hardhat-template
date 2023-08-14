@@ -1,11 +1,11 @@
 import "@nomiclabs/hardhat-web3";
 import "@nomiclabs/hardhat-truffle5";
 import "@nomiclabs/hardhat-ethers";
-import "@typechain/hardhat";
 import "@nomicfoundation/hardhat-chai-matchers";
-import "@dlsl/hardhat-migrate";
-import "@dlsl/hardhat-gobind";
-import "@dlsl/hardhat-markup";
+import "@solarity/hardhat-migrate";
+import "@solarity/hardhat-gobind";
+import "@solarity/hardhat-markup";
+import "@typechain/hardhat";
 import "hardhat-contract-sizer";
 import "hardhat-gas-reporter";
 import "solidity-coverage";

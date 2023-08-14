@@ -1,4 +1,4 @@
-import { Deployer, Logger } from "@dlsl/hardhat-migrate";
+import { Deployer, Logger } from "@solarity/hardhat-migrate";
 import { artifacts } from "hardhat";
 
 const ERC20Mock = artifacts.require("ERC20Mock");
