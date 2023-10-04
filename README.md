@@ -6,6 +6,14 @@ Template hardhat repository for ad-hoc smart contracts development.
 
 The template works out of the box. To clean up the repo, you may need to delete the mock contracts, tests and migration files.
 
+#### Compilation
+
+To compile the contracts, use the next script:
+
+```bash
+npm run compile
+```
+
 #### Test
 
 To run the tests, execute the following command:
@@ -26,7 +34,7 @@ To deploy the contracts locally, run the following commands (in the different te
 
 ```bash
 npm run private-network
-npm run deploy-local
+npm run deploy-localhost
 ```
 
 #### Bindings
@@ -41,9 +49,9 @@ npm run generate-types
 
 ### Integrated plugins
 
-- Hardhat official `ethers` + `ethers-v5`
+- Hardhat official `ethers` + `ethers-v6`
 - [`Typechain`](https://www.npmjs.com/package/@typechain/hardhat)
-- [`hardhat-migrate`](https://www.npmjs.com/package/@solarity/hardhat-migrate), [`hardhat-gobind`](https://www.npmjs.com/package/@solarity/hardhat-gobind)
+- [`hardhat-migrate`](https://www.npmjs.com/package/@solarity/hardhat-migrate), [`hardhat-markup`](https://www.npmjs.com/package/@solarity/hardhat-markup), [`hardhat-gobind`](https://www.npmjs.com/package/@solarity/hardhat-gobind)
 - [`hardhat-contract-sizer`](https://www.npmjs.com/package/hardhat-contract-sizer)
 - [`hardhat-gas-reporter`](https://www.npmjs.com/package/hardhat-gas-reporter)
 - [`solidity-coverage`](https://www.npmjs.com/package/solidity-coverage)

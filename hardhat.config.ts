@@ -1,6 +1,6 @@
 import "@nomiclabs/hardhat-web3";
 import "@nomiclabs/hardhat-truffle5";
-import "@nomiclabs/hardhat-ethers";
+import "@nomicfoundation/hardhat-ethers";
 import "@nomicfoundation/hardhat-chai-matchers";
 import "@solarity/hardhat-migrate";
 import "@solarity/hardhat-gobind";
@@ -23,11 +23,11 @@ function privateKey() {
 function typechainTarget() {
   const target = process.env.TYPECHAIN_TARGET;
 
-  return target === "" || target === undefined ? "ethers-v5" : target;
+  return target === "" || target === undefined ? "ethers-v6" : target;
 }
 
 function forceTypechain() {
-  return process.env.TYPECHAIN_FORCE !== "false";
+  return process.env.TYPECHAIN_FORCE === "false";
 }
 
 const config: HardhatUserConfig = {
@@ -134,7 +134,7 @@ const config: HardhatUserConfig = {
     target: typechainTarget(),
     alwaysGenerateOverloads: true,
     discriminateTypes: true,
-    dontOverrideCompile: !forceTypechain(),
+    dontOverrideCompile: forceTypechain(),
   },
 };
 

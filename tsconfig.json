@@ -9,7 +9,7 @@
     "resolveJsonModule": true,
     "paths": {
       "@/*": ["./*"],
-      "@ethers-v5": ["./generated-types/ethers"]
+      "@ethers-v6": ["./generated-types/ethers"]
     }
   }
 }
