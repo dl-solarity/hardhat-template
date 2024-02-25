@@ -27,11 +27,6 @@ const config: HardhatUserConfig = {
       url: "http://127.0.0.1:8545",
       gasMultiplier: 1.2,
     },
-    goerli: {
-      url: `https://goerli.infura.io/v3/${process.env.INFURA_KEY}`,
-      accounts: privateKey(),
-      gasMultiplier: 1.2,
-    },
     sepolia: {
       url: `https://sepolia.infura.io/v3/${process.env.INFURA_KEY}`,
       accounts: privateKey(),
