@@ -5,7 +5,7 @@
   "author": "Distributed Lab",
   "description": "",
   "scripts": {
-    "prepare": "npx husky",
+    "prepare": "husky",
     "compile": "npx hardhat compile",
     "coverage": "npx hardhat coverage --solcoverjs ./.solcover.ts",
     "clean": "npx hardhat clean",
@@ -30,40 +30,40 @@
     "lint-sol-fix": "prettier --write \"contracts/**/*.sol\""
   },
   "dependencies": {
-    "@openzeppelin/contracts": "5.0.1",
-    "@openzeppelin/contracts-upgradeable": "5.0.1",
-    "@solarity/solidity-lib": "2.7.0",
-    "dotenv": "^16.4.5",
+    "@openzeppelin/contracts": "5.0.2",
+    "@openzeppelin/contracts-upgradeable": "5.0.2",
+    "@solarity/solidity-lib": "2.7.2",
+    "dotenv": "16.4.5",
     "hardhat": "2.20.1",
-    "typechain": "^8.3.2"
+    "typechain": "8.3.2"
   },
   "devDependencies": {
     "@metamask/eth-sig-util": "^7.0.1",
     "@nomicfoundation/hardhat-chai-matchers": "^2.0.6",
     "@nomicfoundation/hardhat-ethers": "^3.0.5",
     "@nomicfoundation/hardhat-network-helpers": "^1.0.10",
-    "@solarity/hardhat-gobind": "^1.1.1",
-    "@solarity/hardhat-markup": "^1.0.5",
-    "@solarity/hardhat-migrate": "^2.1.2",
+    "@solarity/hardhat-gobind": "^1.2.2",
+    "@solarity/hardhat-markup": "^1.0.7",
+    "@solarity/hardhat-migrate": "^2.1.7",
     "@typechain/ethers-v6": "^0.5.1",
     "@typechain/hardhat": "^9.1.0",
-    "@types/chai": "^4.3.12",
+    "@types/chai": "^4.3.14",
     "@types/mocha": "^10.0.6",
     "@types/node": "^18.16.0",
     "bignumber.js": "^9.1.2",
     "chai": "^4.4.1",
     "ethers": "^6.11.1",
     "hardhat-contract-sizer": "^2.10.0",
-    "hardhat-gas-reporter": "^1.0.10",
+    "hardhat-gas-reporter": "^2.0.2",
     "husky": "^9.0.11",
     "mocha": "^10.3.0",
     "prettier": "^3.2.5",
     "prettier-plugin-solidity": "^1.3.1",
     "solhint": "^4.1.1",
     "solhint-plugin-prettier": "^0.1.0",
-    "solidity-coverage": "^0.8.8",
+    "solidity-coverage": "^0.8.11",
     "ts-node": "^10.9.2",
     "tsconfig-paths": "^4.2.0",
-    "typescript": "^5.3.3"
+    "typescript": "^5.4.3"
   }
 }
