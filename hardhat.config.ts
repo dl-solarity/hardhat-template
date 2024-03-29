@@ -39,7 +39,7 @@ const config: HardhatUserConfig = {
       timeout: 60000,
     },
     mumbai: {
-      url: `https://rpc-mumbai.maticvigil.com/`,
+      url: "https://polygon-mumbai-bor-rpc.publicnode.com",
       accounts: privateKey(),
       gasMultiplier: 1.2,
     },
