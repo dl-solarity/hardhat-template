@@ -38,11 +38,6 @@ const config: HardhatUserConfig = {
       gasMultiplier: 1.2,
       timeout: 60000,
     },
-    mumbai: {
-      url: "https://polygon-mumbai-bor-rpc.publicnode.com",
-      accounts: privateKey(),
-      gasMultiplier: 1.2,
-    },
     fuji: {
       url: `https://avalanche-fuji.infura.io/v3/${process.env.INFURA_KEY}`,
       accounts: privateKey(),
@@ -86,7 +81,6 @@ const config: HardhatUserConfig = {
       mainnet: `${process.env.ETHERSCAN_KEY}`,
       bscTestnet: `${process.env.BSCSCAN_KEY}`,
       bsc: `${process.env.BSCSCAN_KEY}`,
-      polygonMumbai: `${process.env.POLYGONSCAN_KEY}`,
       polygon: `${process.env.POLYGONSCAN_KEY}`,
       avalancheFujiTestnet: `${process.env.AVALANCHE_KEY}`,
       avalanche: `${process.env.AVALANCHE_KEY}`,
