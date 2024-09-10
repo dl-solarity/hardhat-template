@@ -47,6 +47,7 @@
     "@nomicfoundation/hardhat-chai-matchers": "^2.0.7",
     "@nomicfoundation/hardhat-ethers": "^3.0.6",
     "@nomicfoundation/hardhat-network-helpers": "^1.0.11",
+    "@solarity/chai-zkit": "^0.2.5",
     "@solarity/hardhat-gobind": "^1.2.2",
     "@solarity/hardhat-markup": "^1.0.8",
     "@solarity/hardhat-migrate": "^2.1.10",
