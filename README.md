@@ -52,6 +52,7 @@ npm run generate-types
 - Hardhat official `ethers` + `ethers-v6`
 - [`Typechain`](https://www.npmjs.com/package/@typechain/hardhat)
 - [`hardhat-migrate`](https://www.npmjs.com/package/@solarity/hardhat-migrate), [`hardhat-markup`](https://www.npmjs.com/package/@solarity/hardhat-markup), [`hardhat-gobind`](https://www.npmjs.com/package/@solarity/hardhat-gobind)
+- [`hardhat-zkit`](https://www.npmjs.com/package/@solarity/hardhat-zkit), [`chai-zkit`](https://www.npmjs.com/package/@solarity/chai-zkit)
 - [`hardhat-contract-sizer`](https://www.npmjs.com/package/hardhat-contract-sizer)
 - [`hardhat-gas-reporter`](https://www.npmjs.com/package/hardhat-gas-reporter)
 - [`solidity-coverage`](https://www.npmjs.com/package/solidity-coverage)
