@@ -1,2 +1,2 @@
 ./contracts/verifiers
-./contracts/mocks
+# ./contracts/mock
