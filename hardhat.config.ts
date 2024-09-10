@@ -1,12 +1,19 @@
 import "@nomicfoundation/hardhat-ethers";
 import "@nomicfoundation/hardhat-chai-matchers";
+
+import "@solarity/chai-zkit";
+import "@solarity/hardhat-zkit";
 import "@solarity/hardhat-migrate";
 import "@solarity/hardhat-gobind";
 import "@solarity/hardhat-markup";
+
 import "@typechain/hardhat";
+
 import "hardhat-contract-sizer";
 import "hardhat-gas-reporter";
+
 import "solidity-coverage";
+
 import "tsconfig-paths/register";
 
 import { HardhatUserConfig } from "hardhat/config";

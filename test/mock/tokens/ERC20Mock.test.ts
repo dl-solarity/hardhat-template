@@ -1,8 +1,8 @@
 import { ethers } from "hardhat";
 import { SignerWithAddress } from "@nomicfoundation/hardhat-ethers/signers";
 import { expect } from "chai";
-import { Reverter } from "@/test/helpers/reverter";
-import { wei } from "@/scripts/utils/utils";
+import { Reverter } from "@test-helpers";
+import { wei } from "@scripts";
 import { ERC20Mock } from "@ethers-v6";
 
 describe("ERC20Mock", () => {
