@@ -82,6 +82,11 @@ const config: HardhatUserConfig = {
       evmVersion: "paris",
     },
   },
+  zkit: {
+    compilationSettings: {
+      onlyFiles: [],
+    },
+  },
   etherscan: {
     apiKey: {
       sepolia: `${process.env.ETHERSCAN_KEY}`,

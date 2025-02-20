@@ -10,6 +10,7 @@
     "func-visibility": ["warn", { "ignoreConstructors": true }],
     "max-states-count": "warn",
     "not-rely-on-time": "off",
-    "var-name-mixedcase": "off"
+    "var-name-mixedcase": "off",
+    "compiler-version": "off"
   }
 }

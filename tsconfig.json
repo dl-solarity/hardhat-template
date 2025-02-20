@@ -9,6 +9,7 @@
     "resolveJsonModule": true,
     "paths": {
       "@/*": ["./*"],
+      "@zkit": ["./generated-types/zkit"],
       "@ethers-v6": ["./generated-types/ethers"],
       "@test-helpers": ["./test/helpers"],
       "@scripts": ["./scripts"]
