@@ -1,3 +1,4 @@
+import "@nomicfoundation/hardhat-verify";
 import "@nomicfoundation/hardhat-ethers";
 import "@nomicfoundation/hardhat-chai-matchers";
 
@@ -99,7 +100,9 @@ const config: HardhatUserConfig = {
     },
   },
   migrate: {
-    pathToMigrations: "./deploy/",
+    paths: {
+      pathToMigrations: "./deploy/",
+    },
   },
   mocha: {
     timeout: 1000000,
