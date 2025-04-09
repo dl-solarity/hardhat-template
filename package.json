@@ -41,18 +41,18 @@
   "dependencies": {
     "@openzeppelin/contracts": "5.2.0",
     "@openzeppelin/contracts-upgradeable": "5.2.0",
-    "@solarity/solidity-lib": "2.7.17"
+    "@solarity/solidity-lib": "3.0.1"
   },
   "devDependencies": {
     "@nomicfoundation/hardhat-chai-matchers": "^2.0.8",
     "@nomicfoundation/hardhat-ethers": "^3.0.8",
     "@nomicfoundation/hardhat-network-helpers": "^1.0.12",
     "@nomicfoundation/hardhat-verify": "^2.0.13",
-    "@solarity/chai-zkit": "^0.3.1",
+    "@solarity/chai-zkit": "^0.3.2",
     "@solarity/hardhat-gobind": "^1.2.2",
     "@solarity/hardhat-markup": "^1.0.10",
-    "@solarity/hardhat-migrate": "^3.0.0",
-    "@solarity/hardhat-zkit": "^0.5.14",
+    "@solarity/hardhat-migrate": "^3.0.2",
+    "@solarity/hardhat-zkit": "^0.5.15",
     "@typechain/ethers-v6": "^0.5.1",
     "@typechain/hardhat": "^9.1.0",
     "@types/chai": "^4.3.20",
