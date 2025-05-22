@@ -1,24 +1,21 @@
-import { expect } from "chai";
-import { ethers } from "hardhat";
+import { ERC20Mock } from "@ethers-v6";
+import { wei } from "@scripts";
+import { Reverter } from "@test-helpers";
 
 import { SignerWithAddress } from "@nomicfoundation/hardhat-ethers/signers";
 
-import { wei } from "@scripts";
-
-import { Reverter } from "@test-helpers";
-
-import { ERC20Mock } from "@ethers-v6";
+import { expect } from "chai";
+import { ethers } from "hardhat";
 
 describe("ERC20Mock", () => {
   const reverter = new Reverter();
 
-  let OWNER: SignerWithAddress;
   let SECOND: SignerWithAddress;
 
   let erc20: ERC20Mock;
 
   before(async () => {
-    [OWNER, SECOND] = await ethers.getSigners();
+    [, SECOND] = await ethers.getSigners();
 
     const ERC20Mock = await ethers.getContractFactory("ERC20Mock");
     erc20 = await ERC20Mock.deploy("Mock", "Mock", 18);
