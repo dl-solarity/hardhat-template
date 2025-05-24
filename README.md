@@ -59,6 +59,8 @@ npm run generate-types
 
 ### Other niceties
 
-- The template comes with presetup `prettier` and `solhint` that lint the project via `husky` before compilation hook.
+- The template comes with presetup `prettier`, `solhint` and `eslint` that lint the project via `husky` before compilation hook.
 - The `.env.example` file is provided to check what is required as ENVs
 - Preinstalled `@openzeppelin/contracts` and `@solarity/solidity-lib`
+
+> Install the `ESLint` extension in VSCode to enable `ESLint`.

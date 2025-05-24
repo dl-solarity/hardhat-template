@@ -1,9 +1,9 @@
 {
-  "plugins": ["prettier-plugin-solidity"],
   "overrides": [
     {
       "files": "*.sol",
       "options": {
+        "plugins": ["prettier-plugin-solidity"],
         "printWidth": 99,
         "tabWidth": 4,
         "useTabs": false,
@@ -14,8 +14,26 @@
     {
       "files": "*.ts",
       "options": {
+        "plugins": ["@trivago/prettier-plugin-sort-imports"],
         "printWidth": 120,
-        "tabWidth": 2
+        "tabWidth": 2,
+        "singleQuote": false,
+        "importOrder": [
+          "^@nomicfoundation/(.*)$",
+          "^@solarity/(.*)$",
+          "^@typechain/(.*)$",
+          "^hardhat-[a-zA-Z0-9_\\-]+$",
+          "^tsconfig-paths/register$",
+          "^solidity-[a-zA-Z0-9_\\-]+$",
+          "^hardhat/config$",
+          "^dotenv$",
+          "^[a-zA-Z0-9_\\-]+$",
+          "^\\u0000",
+          "^\\.\\./",
+          "^\\./"
+        ],
+        "importOrderSeparation": true,
+        "importOrderSortSpecifiers": true
       }
     }
   ]

@@ -1,25 +1,26 @@
-import "@nomicfoundation/hardhat-verify";
-import "@nomicfoundation/hardhat-ethers";
 import "@nomicfoundation/hardhat-chai-matchers";
+import "@nomicfoundation/hardhat-ethers";
+import "@nomicfoundation/hardhat-verify";
 
 import "@solarity/chai-zkit";
-import "@solarity/hardhat-zkit";
-import "@solarity/hardhat-migrate";
 import "@solarity/hardhat-gobind";
 import "@solarity/hardhat-markup";
+import "@solarity/hardhat-migrate";
+import "@solarity/hardhat-zkit";
 
 import "@typechain/hardhat";
 
 import "hardhat-contract-sizer";
 import "hardhat-gas-reporter";
 
-import "solidity-coverage";
-
 import "tsconfig-paths/register";
+
+import "solidity-coverage";
 
 import { HardhatUserConfig } from "hardhat/config";
 
 import * as dotenv from "dotenv";
+
 dotenv.config();
 
 function privateKey() {
