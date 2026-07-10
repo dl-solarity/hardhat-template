@@ -1,51 +1,18 @@
-import "@typechain/hardhat";
+import hardhatToolboxMochaEthers from "@nomicfoundation/hardhat-toolbox-mocha-ethers";
 
-import "@nomicfoundation/hardhat-ethers";
+import hardhatGobind from "@solarity/hardhat-gobind";
+import hardhatMarkup from "@solarity/hardhat-markup";
+import hardhatMigrate from "@solarity/hardhat-migrate";
 
-import "@nomicfoundation/hardhat-chai-matchers";
-import "@nomicfoundation/hardhat-verify";
+import { configVariable, defineConfig } from "hardhat/config";
 
-import "@solarity/chai-zkit";
-import "@solarity/hardhat-gobind";
-import "@solarity/hardhat-markup";
-import "@solarity/hardhat-migrate";
-import "@solarity/hardhat-zkit";
+import hardhatContractSizer from "@solidstate/hardhat-contract-sizer";
 
-import "hardhat-contract-sizer";
-import "hardhat-gas-reporter";
-
-import "tsconfig-paths/register";
-
-import "solidity-coverage";
-
-import { HardhatUserConfig } from "hardhat/config";
-
-import * as dotenv from "dotenv";
-
-dotenv.config({ quiet: true });
-
-function privateKey() {
-  return process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [];
-}
-
-const config: HardhatUserConfig = {
-  networks: {
-    hardhat: {
-      initialDate: "1970-01-01T00:00:00Z",
-    },
-    localhost: {
-      url: "http://127.0.0.1:8545",
-      gasMultiplier: 1.2,
-    },
-    sepolia: {
-      url: `https://sepolia.infura.io/v3/${process.env.INFURA_KEY}`,
-      accounts: privateKey(),
-      gasMultiplier: 1.2,
-    },
-    ethereum: {
-      url: `https://mainnet.infura.io/v3/${process.env.INFURA_KEY}`,
-      accounts: privateKey(),
-      gasMultiplier: 1.2,
+export default defineConfig({
+  plugins: [hardhatToolboxMochaEthers, hardhatGobind, hardhatMarkup, hardhatMigrate, hardhatContractSizer],
+  paths: {
+    sources: {
+      solidity: ["contracts"],
     },
   },
   solidity: {
@@ -57,16 +24,52 @@ const config: HardhatUserConfig = {
       },
       evmVersion: "paris",
     },
+    npmFilesToBuild: [],
   },
-  zkit: {
-    compilationSettings: {
-      onlyFiles: [],
+  networks: {
+    default: {
+      type: "edr-simulated",
+      chainType: "l1",
+      initialDate: "1970-01-01T00:00:00Z",
+    },
+    localhost: {
+      type: "http",
+      chainType: "l1",
+      url: "http://127.0.0.1:8545",
+      gasMultiplier: 1.2,
+    },
+    ethereumFork: {
+      type: "edr-simulated",
+      chainType: "l1",
+      forking: {
+        url: configVariable("INFURA_KEY", "https://mainnet.infura.io/v3/{variable}"),
+        blockNumber: 17000000,
+      },
+    },
+    sepolia: {
+      type: "http",
+      chainType: "l1",
+      url: configVariable("INFURA_KEY", "https://sepolia.infura.io/v3/{variable}"),
+      accounts: [configVariable("PRIVATE_KEY")],
+      gasMultiplier: 1.2,
+    },
+    ethereum: {
+      type: "http",
+      chainType: "l1",
+      url: configVariable("INFURA_KEY", "https://mainnet.infura.io/v3/{variable}"),
+      accounts: [configVariable("PRIVATE_KEY")],
+      gasMultiplier: 1.2,
     },
   },
-  etherscan: {
-    apiKey: {
-      sepolia: `${process.env.ETHERSCAN_KEY}`,
-      mainnet: `${process.env.ETHERSCAN_KEY}`,
+  verify: {
+    blockscout: {
+      enabled: false,
+    },
+    etherscan: {
+      apiKey: configVariable("ETHERSCAN_KEY"),
+    },
+    sourcify: {
+      enabled: false,
     },
   },
   migrate: {
@@ -74,27 +77,26 @@ const config: HardhatUserConfig = {
       pathToMigrations: "./deploy/",
     },
   },
-  mocha: {
-    timeout: 1000000,
+  test: {
+    mocha: {
+      timeout: 1_000_000,
+    },
+  },
+  coverage: {
+    skipFiles: [],
   },
   contractSizer: {
     alphaSort: false,
-    disambiguatePaths: false,
     runOnCompile: true,
+    flat: true,
     strict: false,
-  },
-  gasReporter: {
-    currency: "USD",
-    gasPrice: 50,
-    enabled: false,
-    coinmarketcap: `${process.env.COINMARKETCAP_KEY}`,
+    unit: "KiB",
   },
   typechain: {
     outDir: "generated-types/ethers",
-    target: "ethers-v6",
     alwaysGenerateOverloads: true,
+    dontOverrideCompile: false,
     discriminateTypes: true,
+    tsNocheck: false,
   },
-};
-
-export default config;
+});

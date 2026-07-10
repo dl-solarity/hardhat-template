@@ -1,22 +1,26 @@
 import { expect } from "chai";
-import { ethers } from "hardhat";
+import hre from "hardhat";
 
-import { SignerWithAddress } from "@nomicfoundation/hardhat-ethers/signers";
+import type { HardhatEthers } from "@nomicfoundation/hardhat-ethers/types";
+import type { HardhatEthersSigner } from "@nomicfoundation/hardhat-ethers/types";
 
 import { wei } from "@scripts";
 
 import { Reverter } from "@test-helpers";
 
-import { ERC20Mock } from "@ethers-v6";
+import type { ERC20Mock } from "@ethers-v6";
 
 describe("ERC20Mock", () => {
   const reverter = new Reverter();
 
-  let SECOND: SignerWithAddress;
+  let ethers: HardhatEthers;
+
+  let SECOND: HardhatEthersSigner;
 
   let erc20: ERC20Mock;
 
   before(async () => {
+    ({ ethers } = await hre.network.getOrCreate());
     [, SECOND] = await ethers.getSigners();
 
     const ERC20Mock = await ethers.getContractFactory("ERC20Mock");
@@ -41,7 +45,7 @@ describe("ERC20Mock", () => {
 
       const tx = erc20.mint(SECOND.address, wei(1000));
 
-      await expect(tx).to.changeTokenBalance(erc20, SECOND, wei(1000));
+      await expect(tx).to.changeTokenBalance(ethers, erc20, SECOND, wei(1000));
     });
   });
 
@@ -53,7 +57,7 @@ describe("ERC20Mock", () => {
 
       const tx = erc20.burn(SECOND.address, wei("0.5"));
 
-      await expect(tx).to.changeTokenBalance(erc20, SECOND, wei("-0.5"));
+      await expect(tx).to.changeTokenBalance(ethers, erc20, SECOND, wei("-0.5"));
     });
   });
 });

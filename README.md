@@ -1,20 +1,20 @@
-# Hardhat template 
+# Hardhat template
 
-Template hardhat repository for ad-hoc smart contracts development.
+Template Hardhat repository for ad-hoc smart contracts development.
 
-### How to use
+## How to use
 
 The template works out of the box. To clean up the repo, you may need to delete the mock contracts, tests and migration files.
 
-#### Compilation
+### Compilation
 
 To compile the contracts, use the next script:
 
 ```bash
-npm run compile
+npm run build
 ```
 
-#### Test
+### Test
 
 To run the tests, execute the following command:
 
@@ -28,7 +28,7 @@ Or to see the coverage, run:
 npm run coverage
 ```
 
-#### Local deployment
+### Local deployment
 
 To deploy the contracts locally, run the following commands (in the different terminals):
 
@@ -37,7 +37,7 @@ npm run private-network
 npm run deploy-localhost
 ```
 
-#### Bindings
+### Bindings
 
 The command to generate the bindings is as follows:
 
@@ -47,17 +47,12 @@ npm run generate-types
 
 > See the full list of available commands in the `package.json` file.
 
-### Integrated plugins
+## Integrated plugins
 
-- Hardhat official `ethers` + `ethers-v6`
-- [`Typechain`](https://www.npmjs.com/package/@typechain/hardhat)
-- [`hardhat-migrate`](https://www.npmjs.com/package/@solarity/hardhat-migrate), [`hardhat-markup`](https://www.npmjs.com/package/@solarity/hardhat-markup), [`hardhat-gobind`](https://www.npmjs.com/package/@solarity/hardhat-gobind)
-- [`hardhat-zkit`](https://www.npmjs.com/package/@solarity/hardhat-zkit), [`chai-zkit`](https://www.npmjs.com/package/@solarity/chai-zkit)
-- [`hardhat-contract-sizer`](https://www.npmjs.com/package/hardhat-contract-sizer)
-- [`hardhat-gas-reporter`](https://www.npmjs.com/package/hardhat-gas-reporter)
-- [`solidity-coverage`](https://www.npmjs.com/package/solidity-coverage)
+- [`@nomicfoundation/hardhat-toolbox-mocha-ethers`](https://www.npmjs.com/package/@nomicfoundation/hardhat-toolbox-mocha-ethers)
+- [`@solarity/hardhat-migrate`](https://www.npmjs.com/package/@solarity/hardhat-migrate), [`@solarity/hardhat-markup`](https://www.npmjs.com/package/@solarity/hardhat-markup), [`@solarity/hardhat-gobind`](https://www.npmjs.com/package/@solarity/hardhat-gobind)
 
-### Other niceties
+## Other niceties
 
 - The template comes with presetup `prettier`, `slippy` and `eslint` that lint the project via `husky` before compilation hook.
 - The `.env.example` file is provided to check what is required as ENVs
