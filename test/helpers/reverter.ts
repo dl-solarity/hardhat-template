@@ -1,14 +1,19 @@
-import { network } from "hardhat";
+import hre from "hardhat";
 
 export class Reverter {
-  private snapshotId: any;
+  private snapshotId: string | undefined;
 
   revert = async () => {
-    await network.provider.send("evm_revert", [this.snapshotId]);
+    const { provider } = await hre.network.getOrCreate();
+    await provider.request({ method: "evm_revert", params: [this.snapshotId] });
     await this.snapshot();
   };
 
   snapshot = async () => {
-    this.snapshotId = await network.provider.send("evm_snapshot", []);
+    const { provider } = await hre.network.getOrCreate();
+    this.snapshotId = (await provider.request({
+      method: "evm_snapshot",
+      params: [],
+    })) as string;
   };
 }

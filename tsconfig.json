@@ -1,21 +1,19 @@
 {
+  "extends": "@tsconfig/node22/tsconfig.json",
   "compilerOptions": {
-    "target": "es2022",
-    "module": "commonjs",
     "baseUrl": "./",
-    "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
-    "skipLibCheck": true,
     "resolveJsonModule": true,
+    "verbatimModuleSyntax": true,
+    "types": ["node", "mocha"],
     "allowImportingTsExtensions": true,
     "noEmit": true,
     "paths": {
       "@/*": ["./*"],
-      "@zkit": ["./generated-types/zkit"],
-      "@ethers-v6": ["./generated-types/ethers"],
-      "@test-helpers": ["./test/helpers"],
-      "@scripts": ["./scripts"]
+      "@ethers-v6": ["./generated-types/ethers/index.js"],
+      "@test-helpers": ["./test/helpers/index.js"],
+      "@scripts": ["./scripts/index.js"]
     }
   }
 }
